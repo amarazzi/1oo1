@@ -50,6 +50,18 @@ final class AlbumRepository {
         }
     }
 
+    func updateDescriptionsBatch(_ albums: [Album]) async throws {
+        try await db.dbQueue.write { db in
+            for album in albums {
+                guard let desc = album.description, !desc.isEmpty else { continue }
+                try db.execute(
+                    sql: "UPDATE albums SET description = ? WHERE id = ? AND (description IS NULL OR description = '')",
+                    arguments: [desc, album.id]
+                )
+            }
+        }
+    }
+
     func updateMusicBrainzId(id: Int, musicbrainzId: String) async throws {
         try await db.dbQueue.write { db in
             try db.execute(

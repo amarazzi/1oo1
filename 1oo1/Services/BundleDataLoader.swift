@@ -102,6 +102,9 @@ enum BundleDataLoader {
                     try await albumRepo.updateMusicBrainzId(id: album.id, musicbrainzId: mbId)
                 }
                 print("BundleDataLoader: backfilled musicbrainzIds for \(albums.filter { $0.musicbrainzId != nil }.count) albums")
+                // Backfill descriptions for albums that have empty/null description in DB
+                try await albumRepo.updateDescriptionsBatch(albums)
+                print("BundleDataLoader: backfilled descriptions for \(albums.filter { $0.description != nil && !($0.description!.isEmpty) }.count) albums")
             }
         } catch {
             print("BundleDataLoader seed failed: \(error)")
