@@ -63,12 +63,15 @@ When you mark something as watched or listened, a history entry is created local
 
 1. Download `1oo1.zip` and unzip it
 2. Drag `1oo1.app` to your **Applications** folder
-3. **Right-click** (or Control-click) on `1oo1.app` → **Open** → click **Open** in the dialog
-4. The app will appear as a 🍿 icon in your menu bar
+3. Open Terminal and run:
+   ```bash
+   xattr -cr /Applications/1oo1.app
+   ```
+4. Launch the app — it will appear as a 🍿 icon in your menu bar
 
-> Step 3 is necessary because the app is not signed with an Apple Developer certificate. macOS flags downloaded apps from unidentified developers — right-clicking to open bypasses this for that specific app.
+> macOS blocks the app with a "damaged" error because it isn't signed with an Apple Developer certificate. The `xattr` command removes the quarantine flag macOS adds to files downloaded from the internet.
 >
-> Alternatively, if you see a "damaged" error, open Terminal and run `xattr -cr /Applications/1oo1.app`.
+> **No Terminal?** Try instead: double-click the app → dismiss the error → open **System Settings → Privacy & Security** → scroll down → click **Open Anyway**.
 
 ---
 
