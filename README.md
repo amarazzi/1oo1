@@ -63,13 +63,12 @@ When you mark something as watched or listened, a history entry is created local
 
 1. Download `1oo1.zip` and unzip it
 2. Drag `1oo1.app` to your **Applications** folder
-3. Open Terminal and run:
-   ```bash
-   xattr -cr /Applications/1oo1.app
-   ```
-4. Open the app — it will appear as a 🍿 icon in your menu bar
+3. **Right-click** (or Control-click) on `1oo1.app` → **Open** → click **Open** in the dialog
+4. The app will appear as a 🍿 icon in your menu bar
 
-> The `xattr` command is necessary because the app is not signed with an Apple Developer certificate. It removes the quarantine flag that macOS adds to files downloaded from the internet.
+> Step 3 is necessary because the app is not signed with an Apple Developer certificate. macOS flags downloaded apps from unidentified developers — right-clicking to open bypasses this for that specific app.
+>
+> Alternatively, if you see a "damaged" error, open Terminal and run `xattr -cr /Applications/1oo1.app`.
 
 ---
 
@@ -90,32 +89,32 @@ When you mark something as watched or listened, a history entry is created local
 
 2. **Add your TMDB API key**
 
-   Create a file at `~/.1001daily_config` with the following content:
+   Create a file at `~/.1oo1_config` with the following content:
 
    ```
    TMDB_API_KEY=your_api_key_here
    ```
 
-   Alternatively, create a `Config.xcconfig` file in the project root:
-
-   ```
-   TMDB_API_KEY = your_api_key_here
-   ```
-
-3. **Open in Xcode**
+3. **Build and run**
 
    ```bash
-   open "1001 movies or albums.xcodeproj"
+   make
    ```
 
-4. **Run** — the app will appear in your menu bar as a 🍿 icon.
+   Or open in Xcode:
+
+   ```bash
+   open 1oo1.xcodeproj
+   ```
+
+4. **Run** — the app will appear in your menu bar as a 🍿 icon
 
 ---
 
 ## Project structure
 
 ```
-1001Daily/
+1oo1/
 ├── App/                    # Entry point, AppDelegate, AppViewModel, AppEnvironment
 ├── Models/                 # Movie, Album, HistoryEntry, Recommendation
 ├── Database/
