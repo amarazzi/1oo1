@@ -6,6 +6,7 @@ struct MovieCardView: View {
     let isLoading: Bool
     let onWatched: () -> Void
     let onSkip: () -> Void
+    @State private var expandedOverview = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -76,12 +77,22 @@ struct MovieCardView: View {
                         .lineLimit(1)
 
                     if let overview = movie.overview, !overview.isEmpty {
-                        Text(overview)
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                            .lineLimit(3)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .padding(.top, 2)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(overview)
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                                .lineLimit(expandedOverview ? nil : 3)
+                                .fixedSize(horizontal: false, vertical: true)
+                            Button {
+                                withAnimation(.easeInOut(duration: 0.2)) { expandedOverview.toggle() }
+                            } label: {
+                                Text(expandedOverview ? "less" : "more")
+                                    .font(.caption)
+                                    .foregroundStyle(.indigo)
+                            }
+                            .buttonStyle(.plain)
+                        }
+                        .padding(.top, 2)
                     }
 
                     Spacer(minLength: 4)

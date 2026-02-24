@@ -6,6 +6,7 @@ struct AlbumCardView: View {
     let isLoading: Bool
     let onListened: () -> Void
     let onSkip: () -> Void
+    @State private var expandedDescription = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -63,12 +64,22 @@ struct AlbumCardView: View {
                     }
 
                     if let description = album.description, !description.isEmpty {
-                        Text(description)
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                            .lineLimit(3)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .padding(.top, 2)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(description)
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                                .lineLimit(expandedDescription ? nil : 3)
+                                .fixedSize(horizontal: false, vertical: true)
+                            Button {
+                                withAnimation(.easeInOut(duration: 0.2)) { expandedDescription.toggle() }
+                            } label: {
+                                Text(expandedDescription ? "less" : "more")
+                                    .font(.caption)
+                                    .foregroundStyle(.purple)
+                            }
+                            .buttonStyle(.plain)
+                        }
+                        .padding(.top, 2)
                     }
 
                     Spacer(minLength: 4)

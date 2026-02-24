@@ -118,7 +118,6 @@ struct HistoryView: View {
 struct HistoryRowView: View {
     let entry: HistoryEntry
     let onDelete: () -> Void
-    @State private var isHovered = false
 
     var body: some View {
         HStack(spacing: 10) {
@@ -154,28 +153,23 @@ struct HistoryRowView: View {
 
             Spacer()
 
-            // Rating + date + delete
+            // Rating + date
             VStack(alignment: .trailing, spacing: 2) {
-                if isHovered {
-                    Button(action: onDelete) {
-                        Image(systemName: "trash")
-                            .font(.system(size: 11))
-                            .foregroundStyle(.red.opacity(0.8))
-                    }
-                    .buttonStyle(.plain)
-                    .transition(.opacity.combined(with: .scale(scale: 0.8)))
-                } else {
-                    StarRatingDisplayView(rating: entry.rating, starSize: 10)
-                        .transition(.opacity)
-                }
+                StarRatingDisplayView(rating: entry.rating, starSize: 10)
                 Text(entry.displayDate)
                     .font(.caption2)
                     .foregroundStyle(.tertiary)
             }
-            .animation(.easeInOut(duration: 0.15), value: isHovered)
+
+            // Delete button — always visible
+            Button(action: onDelete) {
+                Image(systemName: "trash")
+                    .font(.system(size: 11))
+                    .foregroundStyle(.secondary)
+            }
+            .buttonStyle(.plain)
+            .help("Delete")
         }
         .padding(.vertical, 4)
-        .contentShape(Rectangle())
-        .onHover { isHovered = $0 }
     }
 }
