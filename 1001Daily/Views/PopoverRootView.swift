@@ -5,25 +5,51 @@ struct PopoverRootView: View {
     @State private var showMovieRating = false
     @State private var showAlbumRating = false
     @State private var screen: Screen = .main
+    @State private var navForward: Bool = true
 
     enum Screen { case main, history, settings }
 
     var vm: AppViewModel { env.viewModel }
+
+    // MARK: - Navigation
+
+    private func navigate(to destination: Screen, forward: Bool = true) {
+        withAnimation(.easeInOut(duration: 0.22)) {
+            navForward = forward
+            screen = destination
+        }
+    }
+
+    private var screenTransition: AnyTransition {
+        .asymmetric(
+            insertion: .opacity.combined(with: .move(edge: navForward ? .trailing : .leading)),
+            removal:   .opacity.combined(with: .move(edge: navForward ? .leading  : .trailing))
+        )
+    }
+
+    // MARK: - Body
 
     var body: some View {
         VStack(spacing: 0) {
             switch screen {
             case .main:
                 mainContent
+                    .id(Screen.main)
+                    .transition(screenTransition)
             case .history:
                 subScreen(title: "History") { HistoryView() }
+                    .id(Screen.history)
+                    .transition(screenTransition)
             case .settings:
                 subScreen(title: "Settings") {
-                    SettingsView(onHistory: { screen = .history })
+                    SettingsView(onHistory: { navigate(to: .history) })
                 }
+                .id(Screen.settings)
+                .transition(screenTransition)
             }
         }
         .frame(width: 360)
+        .clipped()
         // Movie rating sheet
         .sheet(isPresented: $showMovieRating) {
             if let movie = vm.currentMovie {
@@ -54,7 +80,7 @@ struct PopoverRootView: View {
             // Header
             HStack {
                 VStack(alignment: .leading, spacing: 1) {
-                    Text("1001")
+                    Text("1oo1")
                         .font(.system(size: 22, weight: .black, design: .rounded))
                         .foregroundStyle(.primary)
                     Text("movies & albums")
@@ -64,15 +90,6 @@ struct PopoverRootView: View {
                         .textCase(.uppercase)
                 }
                 Spacer()
-                Button {
-                    Task { await vm.refreshRecommendations() }
-                } label: {
-                    Image(systemName: "arrow.clockwise")
-                        .font(.system(size: 13, weight: .medium))
-                        .foregroundStyle(.secondary)
-                }
-                .buttonStyle(.plain)
-                .help("Refresh")
             }
             .padding(.horizontal, 14)
             .padding(.top, 10)
@@ -118,7 +135,7 @@ struct PopoverRootView: View {
             Divider().padding(.horizontal, 10)
 
             HStack {
-                Button { screen = .history } label: {
+                Button { navigate(to: .history) } label: {
                     HStack(spacing: 6) {
                         Image(systemName: "clock.arrow.circlepath").font(.caption)
                         HStack(spacing: 4) {
@@ -135,7 +152,7 @@ struct PopoverRootView: View {
 
                 Spacer()
 
-                Button { screen = .settings } label: {
+                Button { navigate(to: .settings) } label: {
                     Image(systemName: "gearshape").font(.caption).foregroundStyle(.secondary)
                 }
                 .buttonStyle(.plain)
@@ -154,7 +171,7 @@ struct PopoverRootView: View {
         VStack(spacing: 0) {
             // Navigation bar
             HStack(spacing: 8) {
-                Button { screen = .main } label: {
+                Button { navigate(to: .main, forward: false) } label: {
                     Image(systemName: "chevron.left")
                         .font(.system(size: 14, weight: .semibold))
                         .foregroundStyle(.primary)
@@ -164,7 +181,7 @@ struct PopoverRootView: View {
                 .buttonStyle(.plain)
 
                 Text(title)
-                    .font(.headline)
+                    .font(.system(size: 15, weight: .semibold))
 
                 Spacer()
             }
