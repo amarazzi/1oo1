@@ -47,7 +47,7 @@
 			containerPortal = DE7C1E0589B7E245EE28D559 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 46B48D48CF6C707F7B845708;
-			remoteInfo = 1001Daily;
+			remoteInfo = 1oo1;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -59,7 +59,7 @@
 		2B06A3DDCFEDCDBE00EF34B4 /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
 		2E6732FE5256B492EC1F9FD6 /* RecommendationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationRepository.swift; sourceTree = "<group>"; };
 		2F4254696088D7D098860277 /* BundleDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleDataLoader.swift; sourceTree = "<group>"; };
-		300118E244D1D26DC07B2885 /* 1001DailyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 1001DailyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		300118E244D1D26DC07B2885 /* 1oo1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 1oo1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A7DCCC87943251A6008EDF /* Main1001DailyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main1001DailyApp.swift; sourceTree = "<group>"; };
 		48A175AB0AEFED0573707283 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		49A08EB42BDF6EDAABCDF9E8 /* HistoryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEntry.swift; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 		812FA19A9B08121B28AAD8F0 /* HistoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRepository.swift; sourceTree = "<group>"; };
 		8CACF55DD8EB48E7D68FA52C /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
 		92FD34E36B1957D9F23EAFA5 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
-		AB07FD9A22E4B2B891BB35D7 /* 1001Daily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1001Daily.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB07FD9A22E4B2B891BB35D7 /* 1oo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1oo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB7ACA31C5E1E7015E74EB2D /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		ACF825B0E632EBD28C613D75 /* AlbumRatingModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumRatingModal.swift; sourceTree = "<group>"; };
 		B72632A57850B11D4A80B17F /* movies_1001.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = movies_1001.json; sourceTree = "<group>"; };
@@ -114,11 +114,11 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		0C72CE2E91B74DBC396BA12A /* 1001DailyTests */ = {
+		0C72CE2E91B74DBC396BA12A /* 1oo1Tests */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = 1001DailyTests;
+			path = 1oo1Tests;
 			sourceTree = "<group>";
 		};
 		0DCD031DE9D9A9E18A3B0176 /* App */ = {
@@ -161,8 +161,8 @@
 		727A7579B4D65DF8C60E8917 = {
 			isa = PBXGroup;
 			children = (
-				D5E65821CCFF899E7BC1E51E /* 1001Daily */,
-				0C72CE2E91B74DBC396BA12A /* 1001DailyTests */,
+				D5E65821CCFF899E7BC1E51E /* 1oo1 */,
+				0C72CE2E91B74DBC396BA12A /* 1oo1Tests */,
 				7E41D93711270ADC73AE8A66 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -198,8 +198,8 @@
 		7E41D93711270ADC73AE8A66 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AB07FD9A22E4B2B891BB35D7 /* 1001Daily.app */,
-				300118E244D1D26DC07B2885 /* 1001DailyTests.xctest */,
+				AB07FD9A22E4B2B891BB35D7 /* 1oo1.app */,
+				300118E244D1D26DC07B2885 /* 1oo1Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -246,7 +246,7 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		D5E65821CCFF899E7BC1E51E /* 1001Daily */ = {
+		D5E65821CCFF899E7BC1E51E /*/* 1oo1 */ = {
 			isa = PBXGroup;
 			children = (
 				0DCD031DE9D9A9E18A3B0176 /* App */,
@@ -257,7 +257,7 @@
 				76152F63DD4960FC2B44A38D /* Services */,
 				9643B9BA38AD5EC914557F2A /* Views */,
 			);
-			path = 1001Daily;
+			path = 1oo1;
 			sourceTree = "<group>";
 		};
 		E626EE716B6948DD4D87A831 /* Repositories */ = {
@@ -283,9 +283,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		386FC4BED1772954D4CF5D16 /* 1001DailyTests */ = {
+		386FC4BED1772954D4CF5D16 /* 1oo1Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7F0195A6252D76E5F1FEE870 /* Build configuration list for PBXNativeTarget "1001DailyTests" */;
+			buildConfigurationList = 7F0195A6252D76E5F1FEE870 /* Build configuration list for PBXNativeTarget "1oo1Tests" */;
 			buildPhases = (
 				A741858131EA4E45EE0EE690 /* Sources */,
 				D122E85B4BA0E8067599F388 /* Frameworks */,
@@ -295,17 +295,17 @@
 			dependencies = (
 				17DE86E4A3A9D2AC8440A163 /* PBXTargetDependency */,
 			);
-			name = 1001DailyTests;
+			name = 1oo1Tests;
 			packageProductDependencies = (
 				E04B8C30D451B3588175A9D9 /* GRDB */,
 			);
-			productName = 1001DailyTests;
-			productReference = 300118E244D1D26DC07B2885 /* 1001DailyTests.xctest */;
+			productName = 1oo1Tests;
+			productReference = 300118E244D1D26DC07B2885 /* 1oo1Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		46B48D48CF6C707F7B845708 /* 1001Daily */ = {
+		46B48D48CF6C707F7B845708 /*/* 1oo1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 26C8C704143FABEEA79AAEBC /* Build configuration list for PBXNativeTarget "1001Daily" */;
+			buildConfigurationList = 26C8C704143FABEEA79AAEBC /* Build configuration list for PBXNativeTarget "1oo1" */;
 			buildPhases = (
 				57CC89C1999D7C645AF742FF /* Sources */,
 				9A6044119674A62819C6E60E /* Resources */,
@@ -315,12 +315,12 @@
 			);
 			dependencies = (
 			);
-			name = 1001Daily;
+			name = 1oo1;
 			packageProductDependencies = (
 				3D23EEC13B9EB78D2A0E639D /* GRDB */,
 			);
-			productName = 1001Daily;
-			productReference = AB07FD9A22E4B2B891BB35D7 /* 1001Daily.app */;
+			productName = 1oo1;
+			productReference = AB07FD9A22E4B2B891BB35D7 /* 1oo1.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -342,7 +342,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D06E40A8116426D64D4E983A /* Build configuration list for PBXProject "1001Daily" */;
+			buildConfigurationList = D06E40A8116426D64D4E983A /* Build configuration list for PBXProject "1oo1" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -359,8 +359,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				46B48D48CF6C707F7B845708 /* 1001Daily */,
-				386FC4BED1772954D4CF5D16 /* 1001DailyTests */,
+				46B48D48CF6C707F7B845708 /* 1oo1 */,
+				386FC4BED1772954D4CF5D16 /* 1oo1Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -425,7 +425,7 @@
 /* Begin PBXTargetDependency section */
 		17DE86E4A3A9D2AC8440A163 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 46B48D48CF6C707F7B845708 /* 1001Daily */;
+			target = 46B48D48CF6C707F7B845708 /* 1oo1 */;
 			targetProxy = D23E87E8241EB8F928288AD3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -442,7 +442,7 @@
 					"@loader_path/../Frameworks",
 				);
 				SDKROOT = macosx;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/1001Daily.app/Contents/MacOS/1001Daily";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/1oo1.app/Contents/MacOS/1oo1";
 			};
 			name = Debug;
 		};
@@ -451,7 +451,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = 1001Daily/Resources/Info.plist;
+				INFOPLIST_FILE = 1oo1/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -466,7 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = 1001Daily/Resources/Info.plist;
+				INFOPLIST_FILE = 1oo1/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -487,7 +487,7 @@
 					"@loader_path/../Frameworks",
 				);
 				SDKROOT = macosx;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/1001Daily.app/Contents/MacOS/1001Daily";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/1oo1.app/Contents/MacOS/1oo1";
 			};
 			name = Release;
 		};
@@ -538,7 +538,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = 1001Daily/Resources/Info.plist;
+				INFOPLIST_FILE = 1oo1/Resources/Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -604,7 +604,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = 1001Daily/Resources/Info.plist;
+				INFOPLIST_FILE = 1oo1/Resources/Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -621,7 +621,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		26C8C704143FABEEA79AAEBC /* Build configuration list for PBXNativeTarget "1001Daily" */ = {
+		26C8C704143FABEEA79AAEBC /* Build configuration list for PBXNativeTarget "1oo1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18DCF4CF9DFC7B30A8C125F6 /* Debug */,
@@ -630,7 +630,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		7F0195A6252D76E5F1FEE870 /* Build configuration list for PBXNativeTarget "1001DailyTests" */ = {
+		7F0195A6252D76E5F1FEE870 /* Build configuration list for PBXNativeTarget "1oo1Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				075B7FCBB16ED0A91F3C55E3 /* Debug */,
@@ -639,7 +639,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		D06E40A8116426D64D4E983A /* Build configuration list for PBXProject "1001Daily" */ = {
+		D06E40A8116426D64D4E983A /* Build configuration list for PBXProject "1oo1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC7E40CA8BBE6BAB7E1D9B6E /* Debug */,

@@ -7,7 +7,13 @@ final class DatabaseManager {
     init() {
         do {
             let appSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-            let dbDir = appSupport.appendingPathComponent("1001Daily")
+            // Migrate from old "1001Daily" folder if it exists
+            let oldDir = appSupport.appendingPathComponent("1001Daily")
+            let newDir = appSupport.appendingPathComponent("1oo1")
+            if FileManager.default.fileExists(atPath: oldDir.path) && !FileManager.default.fileExists(atPath: newDir.path) {
+                try? FileManager.default.moveItem(at: oldDir, to: newDir)
+            }
+            let dbDir = appSupport.appendingPathComponent("1oo1")
             try FileManager.default.createDirectory(at: dbDir, withIntermediateDirectories: true)
             let dbURL = dbDir.appendingPathComponent("db.sqlite")
 

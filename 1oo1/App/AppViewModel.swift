@@ -212,7 +212,7 @@ final class AppViewModel {
     private func fetchAlbumCover(album: Album) async {
         if let coverPath = album.coverArtPath, !coverPath.isEmpty {
             let appSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-            let diskURL = appSupport.appendingPathComponent("1001Daily/ImageCache/\(coverPath)")
+            let diskURL = appSupport.appendingPathComponent("1oo1/ImageCache/\(coverPath)")
             if let image = NSImage(contentsOf: diskURL) {
                 albumCoverImage = image
                 return

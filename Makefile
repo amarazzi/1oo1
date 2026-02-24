@@ -1,4 +1,4 @@
-APP_NAME    = 1001Daily
+APP_NAME    = 1oo1
 BUILD_DIR   = .build/release
 APP_BUNDLE  = $(APP_NAME).app
 APP_CONTENTS= $(APP_BUNDLE)/Contents
@@ -20,7 +20,7 @@ bundle: build
 	@rm -rf $(APP_BUNDLE)
 	@mkdir -p $(APP_MACOS) $(APP_RES)
 	@cp $(BUILD_DIR)/$(APP_NAME) $(APP_MACOS)/$(APP_NAME)
-	@cp 1001Daily/Resources/Info.plist $(APP_CONTENTS)/Info.plist
+	@cp 1oo1/Resources/Info.plist $(APP_CONTENTS)/Info.plist
 	@# Copy bundled JSON resources that SPM puts next to the binary
 	@cp $(BUILD_DIR)/$(APP_NAME)_$(APP_NAME).bundle/movies_1001.json $(APP_RES)/movies_1001.json 2>/dev/null || \
 	 cp $(BUILD_DIR)/movies_1001.json $(APP_RES)/movies_1001.json 2>/dev/null || \

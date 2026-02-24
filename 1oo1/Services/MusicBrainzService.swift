@@ -21,7 +21,7 @@ struct CoverArtArchiveResponse: Decodable {
 }
 
 actor MusicBrainzService {
-    private let userAgent = "1001Daily/1.0 (contact@example.com)"
+    private let userAgent = "1oo1/1.0 (contact@example.com)"
     private let baseURL = "https://musicbrainz.org/ws/2"
     private let coverArtBaseURL = "https://coverartarchive.org/release-group"
 

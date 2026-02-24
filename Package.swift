@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "1001Daily",
+    name: "1oo1",
     platforms: [
         .macOS(.v14)
     ],
@@ -11,11 +11,11 @@ let package = Package(
     ],
     targets: [
         .executableTarget(
-            name: "1001Daily",
+            name: "1oo1",
             dependencies: [
                 .product(name: "GRDB", package: "GRDB.swift")
             ],
-            path: "1001Daily",
+            path: "1oo1",
             exclude: [
                 "Resources/Info.plist",
                 "Resources/Assets.xcassets"

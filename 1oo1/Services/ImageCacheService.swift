@@ -13,7 +13,7 @@ actor ImageCacheService {
 
     init() {
         let appSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-        diskCacheDirectory = appSupport.appendingPathComponent("1001Daily/ImageCache")
+        diskCacheDirectory = appSupport.appendingPathComponent("1oo1/ImageCache")
         try? FileManager.default.createDirectory(at: diskCacheDirectory, withIntermediateDirectories: true)
         memoryCache.countLimit = 50
         memoryCache.totalCostLimit = 50 * 1024 * 1024  // 50MB
