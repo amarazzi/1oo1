@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "1001Daily (build + launch)",
+      "runtimeExecutable": "make",
+      "runtimeArgs": [],
+      "port": 0
+    },
+    {
+      "name": "1001Daily (restart)",
+      "runtimeExecutable": "make",
+      "runtimeArgs": ["restart"],
+      "port": 0
+    }
+  ]
+}

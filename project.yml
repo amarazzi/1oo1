@@ -1,0 +1,52 @@
+name: 1001Daily
+
+options:
+  bundleIdPrefix: com.1001daily
+  deploymentTarget:
+    macOS: "13.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "13.0"
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: ""
+    INFOPLIST_FILE: "1001Daily/Resources/Info.plist"
+    PRODUCT_BUNDLE_IDENTIFIER: com.1001daily.app
+    PRODUCT_NAME: 1001Daily
+
+packages:
+  GRDB:
+    url: https://github.com/groue/GRDB.swift
+    from: "6.29.3"
+
+targets:
+  1001Daily:
+    type: application
+    platform: macOS
+    sources:
+      - path: 1001Daily
+        excludes:
+          - "Resources/Info.plist"
+    resources:
+      - path: 1001Daily/Resources/Data
+      - path: 1001Daily/Resources/Assets.xcassets
+    settings:
+      base:
+        INFOPLIST_FILE: "1001Daily/Resources/Info.plist"
+        XCCONFIG_FILE: "Config.xcconfig"
+    dependencies:
+      - package: GRDB
+        product: GRDB
+
+  1001DailyTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: 1001DailyTests
+    dependencies:
+      - target: 1001Daily
+      - package: GRDB
+        product: GRDB

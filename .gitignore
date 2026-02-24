@@ -1,0 +1,28 @@
+# Build artifacts
+.build/
+*.app/
+
+# Xcode
+*.xcuserdata/
+xcuserdata/
+*.xcworkspace/
+*.xccheckout
+DerivedData/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V3
+.Trashes
+
+# Sensitive config
+.env
+Config.xcconfig
+
+# Cache / DB
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
