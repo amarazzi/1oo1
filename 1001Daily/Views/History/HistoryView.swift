@@ -72,18 +72,13 @@ struct HistoryView: View {
                 .padding(.top, 40)
             } else {
                 List(filteredEntries) { entry in
-                    HistoryRowView(entry: entry)
-                        .listRowInsets(EdgeInsets(top: 4, leading: 14, bottom: 4, trailing: 14))
-                        .listRowSeparator(.hidden)
-                        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                            Button(role: .destructive) {
-                                if let id = entry.id {
-                                    Task { await env.viewModel.deleteHistoryEntry(id: id) }
-                                }
-                            } label: {
-                                Label("Delete", systemImage: "trash")
-                            }
+                    HistoryRowView(entry: entry) {
+                        if let id = entry.id {
+                            Task { await env.viewModel.deleteHistoryEntry(id: id) }
                         }
+                    }
+                    .listRowInsets(EdgeInsets(top: 4, leading: 14, bottom: 4, trailing: 14))
+                    .listRowSeparator(.hidden)
                 }
                 .listStyle(.plain)
             }
@@ -122,6 +117,8 @@ struct HistoryView: View {
 
 struct HistoryRowView: View {
     let entry: HistoryEntry
+    let onDelete: () -> Void
+    @State private var isHovered = false
 
     var body: some View {
         HStack(spacing: 10) {
@@ -157,14 +154,28 @@ struct HistoryRowView: View {
 
             Spacer()
 
-            // Rating + date
+            // Rating + date + delete
             VStack(alignment: .trailing, spacing: 2) {
-                StarRatingDisplayView(rating: entry.rating, starSize: 10)
+                if isHovered {
+                    Button(action: onDelete) {
+                        Image(systemName: "trash")
+                            .font(.system(size: 11))
+                            .foregroundStyle(.red.opacity(0.8))
+                    }
+                    .buttonStyle(.plain)
+                    .transition(.opacity.combined(with: .scale(scale: 0.8)))
+                } else {
+                    StarRatingDisplayView(rating: entry.rating, starSize: 10)
+                        .transition(.opacity)
+                }
                 Text(entry.displayDate)
                     .font(.caption2)
                     .foregroundStyle(.tertiary)
             }
+            .animation(.easeInOut(duration: 0.15), value: isHovered)
         }
         .padding(.vertical, 4)
+        .contentShape(Rectangle())
+        .onHover { isHovered = $0 }
     }
 }
