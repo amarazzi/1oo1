@@ -5754,14 +5754,14 @@
   },
   {
     "id": 524,
-    "title": "Peter And Lucy",
+    "title": "Lucía",
     "year": 1968,
-    "director": "Tibor Rakovský",
+    "director": "Humberto Solás",
     "genre": "Drama",
-    "tmdb_id": 1070556,
-    "imdb_id": "tt12000694",
-    "overview": "Television production about love killed by the rampage of war. It depicts two months of a fragile relationship between a student, Peter, and an amateur painter, Lucie. In Easter week, the young couple's love was supposed to reach its climax, but the lovers' fate is tragically fulfilled - they die in a bombing raid in the ruins of a church.",
-    "runtime_minutes": 52
+    "tmdb_id": 88591,
+    "imdb_id": "tt0064609",
+    "overview": "Traces episodes in the lives of three Cuban women, each named Lucía, from three different historical periods: the 1890s, the 1930s, and the 1960s.",
+    "runtime_minutes": 161
   },
   {
     "id": 525,
@@ -9120,14 +9120,14 @@
   },
   {
     "id": 830,
-    "title": "The Ten Commandments of Creativity",
-    "year": 2000,
-    "director": "Hermann Vaske",
-    "genre": "Documentary",
-    "tmdb_id": 639620,
-    "imdb_id": "tt0272946",
-    "overview": "Having struggled to crack his brief, Dennis Hopper decides the only honourable act is to throw himself off a roof. Before this final act, Sir Peter Ustinov appears and bestows the Ten Commandments of Creativity upon the desperate advertising executive. The Ten Commandments become a template to navigate the state of creativity. Featuring Tarantino, Jeff Koons, Sean Penn, and Malcolm McClaren.",
-    "runtime_minutes": 131
+    "title": "The Decalogue",
+    "year": 1988,
+    "director": "Krzysztof Kieślowski",
+    "genre": "Drama",
+    "tmdb_id": null,
+    "imdb_id": "tt0092337",
+    "overview": "Ten one-hour films inspired by the Ten Commandments, directed by Krzysztof Kieślowski. Each episode explores characters facing moral and ethical dilemmas as they reside in a housing project in 1980s Poland, grappling with questions of life, death, love, hate, truth, and the passage of time.",
+    "runtime_minutes": 55
   },
   {
     "id": 831,
@@ -11375,14 +11375,14 @@
   },
   {
     "id": 1035,
-    "title": "Voices of a Distant Star",
+    "title": "Distant",
     "year": 2002,
-    "director": "Makoto Shinkai",
-    "genre": "Animation, Science Fiction, Romance",
-    "tmdb_id": 37910,
-    "imdb_id": "tt0370754",
-    "overview": "It is 2046 when a mysterious alien force begins their annihilation of the human race. Leaving behind the one person she loves, Mikako joins the interstellar battle as a pilot. And so - while Mikako risks her life to save mankind - Noboru waits. The two lovers, worlds apart, desperately strive to remain connected as the gap between them widens at a frightening pace.",
-    "runtime_minutes": 25
+    "director": "Nuri Bilge Ceylan",
+    "genre": "Drama",
+    "tmdb_id": 31026,
+    "imdb_id": "tt0346094",
+    "overview": "A young man from rural Turkey arrives in Istanbul with dreams of working on a ship and stays with a cousin while he searches for work. Over time, the former's struggles to find employment and the latter's troubles and disappointments strain their relationship and living situation.",
+    "runtime_minutes": 106
   },
   {
     "id": 1036,
