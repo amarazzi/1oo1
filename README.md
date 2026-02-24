@@ -2,7 +2,7 @@
 
 > A macOS menu bar app that guides you through the *1001 Movies You Must See Before You Die* and *1001 Albums You Must Hear Before You Die* lists — one at a time.
 
-![macOS](https://img.shields.io/badge/macOS-13%2B-black?style=flat-square)
+![macOS](https://img.shields.io/badge/macOS-14%2B-black?style=flat-square)
 ![Swift](https://img.shields.io/badge/Swift-5.9-orange?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 
@@ -57,15 +57,29 @@ When you mark something as watched or listened, a history entry is created local
 
 ---
 
-## Requirements
+## Download
 
-- macOS 13 Ventura or later
-- Xcode 15+
-- A free [TMDB API key](https://www.themoviedb.org/settings/api) (for movie metadata)
+**[→ Download latest release](https://github.com/amarazzi/1oo1/releases/latest)**
+
+1. Download `1oo1.zip` and unzip it
+2. Drag `1oo1.app` to your **Applications** folder
+3. Open Terminal and run:
+   ```bash
+   xattr -cr /Applications/1oo1.app
+   ```
+4. Open the app — it will appear as a 🍿 icon in your menu bar
+
+> The `xattr` command is necessary because the app is not signed with an Apple Developer certificate. It removes the quarantine flag that macOS adds to files downloaded from the internet.
 
 ---
 
-## Setup
+## Requirements
+
+- macOS 14 Sonoma or later
+
+---
+
+## Build from source
 
 1. **Clone the repo**
 
