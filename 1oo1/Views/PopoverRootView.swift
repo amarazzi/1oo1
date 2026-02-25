@@ -138,6 +138,8 @@ struct PopoverRootView: View {
                 Button { navigate(to: .history) } label: {
                     HStack(spacing: 6) {
                         Image(systemName: "clock.arrow.circlepath").font(.caption)
+                        Text("History")
+                            .font(.system(size: 12, weight: .medium))
                         HStack(spacing: 4) {
                             Image(systemName: "film.stack").font(.caption2).foregroundStyle(.indigo)
                             Text("\(vm.movieCompletedCount)").font(.caption.monospacedDigit()).foregroundStyle(.secondary)
