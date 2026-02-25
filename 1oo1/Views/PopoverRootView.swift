@@ -134,24 +134,39 @@ struct PopoverRootView: View {
             // Footer
             Divider().padding(.horizontal, 10)
 
-            HStack {
-                Button { navigate(to: .history) } label: {
-                    HStack(spacing: 6) {
-                        Image(systemName: "clock.arrow.circlepath").font(.caption)
-                        HStack(spacing: 4) {
-                            Image(systemName: "film.stack").font(.caption2).foregroundStyle(.indigo)
-                            Text("\(vm.movieCompletedCount)").font(.caption.monospacedDigit()).foregroundStyle(.secondary)
-                            Text("·").foregroundStyle(.tertiary)
-                            Image(systemName: "music.note.list").font(.caption2).foregroundStyle(.purple)
-                            Text("\(vm.albumCompletedCount)").font(.caption.monospacedDigit()).foregroundStyle(.secondary)
-                        }
+            Button { navigate(to: .history) } label: {
+                HStack(spacing: 8) {
+                    Image(systemName: "clock.arrow.circlepath")
+                        .font(.system(size: 13, weight: .medium))
+                        .foregroundStyle(.secondary)
+
+                    Text("History")
+                        .font(.system(size: 13, weight: .medium))
+                        .foregroundStyle(.primary)
+
+                    Spacer()
+
+                    HStack(spacing: 4) {
+                        Image(systemName: "film.stack").font(.caption2).foregroundStyle(.indigo)
+                        Text("\(vm.movieCompletedCount)").font(.caption.monospacedDigit().weight(.medium)).foregroundStyle(.secondary)
+                        Text("·").foregroundStyle(.quaternary)
+                        Image(systemName: "music.note.list").font(.caption2).foregroundStyle(.purple)
+                        Text("\(vm.albumCompletedCount)").font(.caption.monospacedDigit().weight(.medium)).foregroundStyle(.secondary)
                     }
-                    .foregroundStyle(.primary)
+
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: 10, weight: .semibold))
+                        .foregroundStyle(.tertiary)
                 }
-                .buttonStyle(.plain)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 8)
+                .background(.background.secondary)
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+            }
+            .buttonStyle(.plain)
 
+            HStack {
                 Spacer()
-
                 Button { navigate(to: .settings) } label: {
                     Image(systemName: "gearshape").font(.caption).foregroundStyle(.secondary)
                 }
